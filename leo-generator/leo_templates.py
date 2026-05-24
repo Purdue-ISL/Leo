@@ -412,24 +412,10 @@ control SwitchIngress(
 }
 '''
 
-clear_table_t = Template('''bfrt.Leo.pipe.SwitchEngress.layer_${layer_id}_${alu}.clear()''')
+add_leaf_node_entry_t = Template('''bfrt.Leo.pipe.SwitchEgress.layer_${layer}_1.add_with_set_leaf(${key_str}, leaf=${leaf_class})''')
 
-add_tcam_entry_layer_1 = Template('''
-	bfrt.usman.pipe.SwitchIngress.layer_1_${alu}.add_with_set_1_${alu}_feature${feature}(${tree_id},0xffff,0,${constraint})
-''')
+add_internal_node_entry_t = Template('''bfrt.Leo.pipe.SwitchEgress.layer_${layer}_${alu}.add_with_set_${layer}_${alu}_feature${feature_id}(${args})''')
 
-add_tcam_entry_with_prev_result_set_only = Template('''
-	bfrt.usman.pipe.SwitchIngress.layer_${layer}_${alu}.add_with_set_${layer}_${alu}_feature${feature}(${keys_and_masks},0,${result},${constraint})
-''')
+clear_table_entry_t = Template('''bfrt.Leo.pipe.SwitchEgress.layer_${layer_id}_${alu}.clear()''')
 
-add_tcam_entry_with_prev_result_match_and_set = Template('''
-	bfrt.usman.pipe.SwitchIngress.layer_${layer}_${alu}.add_with_set_${layer}_${alu}_feature${feature}(${prev_layer_result},0xffff,${keys_and_masks},0,${constraint},${result})
-''')
-
-add_tcam_entry_with_prev_result_match_only = Template('''
-	bfrt.usman.pipe.SwitchIngress.layer_${layer}_${alu}.add_with_set_${layer}_${alu}_feature${feature}(${prev_layer_result},0xffff,${keys_and_masks},0,${constraint})
-''')
-
-add_tcam_entry_with_leaf = Template('''
-	bfrt.usman.pipe.SwitchIngress.layer_${layer}_${alu}.add_with_set_${layer}_${alu}_feature${feature}(${prev_layer_result},0xffff,${keys_and_masks},0,${constraint})
-''')
+dump_table_entry_t = Template('''bfrt.Leo.pipe.SwitchEgress.layer_${layer_id}_${alu}.dump(table=1)''')

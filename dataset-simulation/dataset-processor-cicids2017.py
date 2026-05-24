@@ -124,7 +124,7 @@ def main():
 		filename = 'D' + str(exp[0]) + '-L' + str(exp[1]) + '-F' + str(exp[2]) + '-SWITCHFEATURES' + str(exp[3])
 		print(filename)
 
-		dataset = read_and_clean_dataset('CICIDS2017')
+		dataset = read_and_clean_dataset('CICIDS-2017')
 		dataset = preprocess_dataset(dataset, exp[3], exp[4])
 
 		print('Shape:', dataset.shape)
