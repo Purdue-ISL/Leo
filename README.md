@@ -6,14 +6,17 @@ This artifact accompanies the paper: *"Leo: Online ML-based Traffic Classificati
 
 If you use this artifact, please cite:
 ```
-@inproceedings{leo_nsdi_2024,
-  author    = {Jafri, Syed Usman and Rao, Sanjay and Shrivastav, Vishal and Tawarmalani, Mohit},
-  title     = {Leo: Online ML-based Traffic Classification at Multi-Terabit Line Rate},
-  year      = {2024},
-  url       = {TODO,
-  doi       = {TODO},
-  booktitle = {21th USENIX Symposium on Networked Systems Design and Implementation (NSDI 24)},
-  series    = {NSDI '24}
+@inproceedings {leo_nsdi_2024,
+author = {Syed Usman Jafri and Sanjay Rao and Vishal Shrivastav and Mohit Tawarmalani},
+title = {Leo: Online {ML-based} Traffic Classification at {Multi-Terabit} Line Rate},
+booktitle = {21st USENIX Symposium on Networked Systems Design and Implementation (NSDI 24)},
+year = {2024},
+isbn = {978-1-939133-39-7},
+address = {Santa Clara, CA},
+pages = {1573--1591},
+url = {https://www.usenix.org/conference/nsdi24/presentation/jafri},
+publisher = {USENIX Association},
+month = apr
 }
 ```
 ## 1. Pre-requisites:
@@ -276,7 +279,9 @@ python3 worst-case-feature-table.py [-h] --width WIDTH --upper_lim UPPER_LIM --l
 
 ## 6. License
 
-The P4 code in this repository makes use of Tofino externs/includes which can be openly published under [Open-Tofino](https://github.com/barefootnetworks/Open-Tofino). Note that you will still need to obtain a license to use the Intel Barefoot SDK to compile the P4 code.
+The P4 code in this repository makes use of Tofino externs/includes which can be openly published under [Open-Tofino](https://github.com/barefootnetworks/Open-Tofino). ~~Note that you will still need to obtain a license to use the Intel Barefoot SDK to compile the P4 code.~~
+
+**UPDATE:** As of 6/12/2026, Intel has open-sourced the SDK [here](https://github.com/p4lang/open-p4studio)!
    
 ## 7. Contact
 Please contact ```jafri3@purdue.edu``` for any questions.
